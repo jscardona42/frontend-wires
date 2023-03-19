@@ -1,0 +1,30 @@
+* {
+	font-family: Arial, Helvetica, sans-serif
+}
+
+h1{
+	font-size: 34px;
+	text-align: left;
+	color: #fff;
+}
+
+img {
+	width: 400px;
+}
+
+.container img{
+	padding: 0px;
+}
+
+.container {
+	width: 400px;
+	background-color: #16222f;
+	margin: auto;
+	padding: 15px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
