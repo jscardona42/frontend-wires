@@ -1,0 +1,64 @@
+<div>
+  <button [routerLink]="['/login']" class="link">Sign in</button>
+  <form [formGroup]="formCreate" (submit)="createUser()">
+    <div class="form-control">
+      <label>Nickname</label>
+      <input
+        type="text"
+        formControlName="username"
+        [ngClass]="{ 'is-invalid': f.username.errors }"
+        placeholder="Nickname"
+      />
+      <div *ngIf="f.username.errors" class="inp-error">
+        <div *ngIf="f.username.errors.required">Campo obligatorio</div>
+      </div>
+    </div>
+    <div class="form-control">
+      <label>Name</label>
+      <input
+        type="text"
+        formControlName="fullname"
+        [ngClass]="{ 'is-invalid': f.fullname.errors }"
+        placeholder="Full name"
+      />
+      <div *ngIf="f.fullname.errors" class="inp-error">
+        <div class="inp-error" *ngIf="f.fullname.errors.required">
+          Campo obligatorio
+        </div>
+      </div>
+    </div>
+    <div class="form-control">
+      <label>Email Adress</label>
+      <input
+        type="email"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': f.email.errors }"
+        placeholder="example@gmail.com"
+      />
+      <div *ngIf="f.email.errors" class="inp-error">
+        <div *ngIf="f.email.errors.required">Campo obligatorio</div>
+        <div *ngIf="f.email.errors?.pattern" class="text-danger">
+          El email no es válido
+        </div>
+      </div>
+    </div>
+    <div class="form-control">
+      <label>Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': f.password.errors }"
+      />
+      <div *ngIf="f.password.errors" class="inp-error">
+        <div *ngIf="f.password.errors.required">Campo obligatorio</div>
+      </div>
+    </div>
+    <div class="form-control">
+      <button type="submit" [disabled]="formCreate.invalid">Create</button>
+    </div>
+    <div class="footer">
+      <p>2022 <span>Rights Reserved. WIRES</span></p>
+      <span>Privacy Policy | Terms & Conditions</span>
+    </div>
+  </form>
+</div>
