@@ -1,0 +1,25 @@
+.container {
+  width: 400px;
+  background-color: #16222f;
+  margin: auto;
+  padding: 15px;
+  margin-top: 50px;
+  text-align: right;
+}
+
+.container.create-messages button {
+  width: 40%;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-top: 15px;
+  color: black;
+}
+
+.container.create-messages .title-message {
+    font-size: 35px;
+    text-align: left;
+    color: #fbfc74;
+  }

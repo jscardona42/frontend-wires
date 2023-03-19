@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 import { RegisterService } from '../register/register.service';
-import * as CryptoJS from "crypto-js";
+import * as CryptoJS from 'crypto-js';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,8 @@ import * as CryptoJS from "crypto-js";
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  username!: string;
+  userId!: string;
   formSignIn!: FormGroup;
   constructor(
     private registerService: RegisterService,
@@ -41,10 +44,9 @@ export class LoginComponent {
     }
     this.registerService.signInUser(this.formSignIn.value).subscribe({
       next: (data) => {
-        console.log(data);
         this.startSession(data);
         alert('Inicio de sesión ok');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/all-messages']);
       },
       error: (err) => {
         console.log(err);
@@ -55,10 +57,14 @@ export class LoginComponent {
 
   startSession(data: any) {
     localStorage.removeItem('token');
+    localStorage.removeItem('fullname');
+    localStorage.removeItem('userId');
     localStorage.setItem(
       'token',
       CryptoJS.AES.encrypt(data.token, environment.key_crypto).toString()
     );
+    localStorage.setItem('fullname', data.fullname);
+    localStorage.setItem('userId', data.user_id);
   }
 
   public errorHandling = (control: string, error: string) => {

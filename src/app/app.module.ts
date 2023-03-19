@@ -8,16 +8,21 @@ import { AppComponent } from './app.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ComponentsModule } from './components/components.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AuthLayoutComponent, AdminLayoutComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    ComponentsModule,
   ],
   providers: [
     {

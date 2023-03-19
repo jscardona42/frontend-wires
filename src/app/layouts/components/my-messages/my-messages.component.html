@@ -1,0 +1,11 @@
+  <div class="card-container" >
+    <div class="card" *ngFor="let message of messages">
+      <h3 class="title">{{message.title}}</h3>
+      <p class="content">{{message.content}}</p>
+      <div class="meta">
+        <span class="date">{{message.created_date}}</span>
+        <span class="name">{{message.users.fullname}}</span>
+      </div>
+    </div>
+  </div>
+  

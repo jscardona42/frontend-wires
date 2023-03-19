@@ -1,0 +1,35 @@
+<div class="container create-messages">
+  <div class="title-message">
+    <span>{{title}}</span>
+  </div>
+  <form [formGroup]="formCreateMessage" (submit)="createMessage()">
+    <div class="form-control">
+      <label>Title messages</label>
+      <input
+        type="text"
+        formControlName="title"
+        [ngClass]="{ 'is-invalid': f.title.errors }"
+        placeholder="talk about me"
+      />
+      <div *ngIf="f.title.errors" class="inp-error">
+        <div *ngIf="f.title.errors.required">Campo obligatorio</div>
+      </div>
+    </div>
+    <div class="form-control">
+      <label>Messages</label>
+      <textarea
+        formControlName="content"
+        placeholder="create messages for share white friends.Max 700 chars"
+        [ngClass]="{ 'is-invalid': f.content.errors }"
+      ></textarea>
+      <div *ngIf="f.content.errors" class="inp-error">
+        <div *ngIf="f.content.errors.required">Campo obligatorio</div>
+      </div>
+    </div>
+    <div class="form-control">
+      <button type="submit" [disabled]="formCreateMessage.invalid">
+        Share
+      </button>
+    </div>
+  </form>
+</div>

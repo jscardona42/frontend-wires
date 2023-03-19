@@ -28,6 +28,18 @@ input {
   background-color: #16222f;
 }
 
+textarea {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  width: 94%;
+  border: 1px #fff solid;
+  background-color: #16222f;
+}
+
 input[type="checkbox"] {
   width: 13px;
   height: 13px;

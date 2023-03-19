@@ -1,0 +1,31 @@
+<nav>
+  <div class="logo">
+    <img src="./assets/img/icons/chatbubbles-sharp.svg" alt="logo" />
+    {{ username }}
+  </div>
+  <ul class="menu">
+    <li>
+      <a routerLinkActive="active" [routerLink]="['/create-messages']"
+        >Create Messages</a
+      >
+    </li>
+    <li><a routerLinkActive="active" [routerLink]="['/my-messages']">My Messages</a></li>
+    <li>
+      <a routerLinkActive="active" [routerLink]="['/all-messages']"
+        >See all messages</a
+      >
+    </li>
+    <li><a routerLinkActive="active" style="cursor: pointer;" (click)="logOutUser()">Logout</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <ul class="mobile-list">
+    <li><a href="#">Create Messages</a></li>
+    <li><a href="#">My Messages</a></li>
+    <li><a href="#">See all messages</a></li>
+    <li><a href="#">Logout</a></li>
+  </ul>
+</nav>

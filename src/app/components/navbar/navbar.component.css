@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: transparent; /* Color de fondo transparente */
+  position: fixed; /* Fijar el navbar en la parte superior de la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; /* Mostrar encima de otros elementos */
+}
+
+.logo {
+  float: left;
+}
+
+.logo img {
+  height: 50px; /* Ajustar la altura de la imagen */
+  margin: 10px; /* Dar un margen */
+}
+
+.menu {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a {
+  color: #fff; /* Color de texto blanco */
+  display: block;
+  line-height: 50px; /* Alinear verticalmente el texto */
+  padding: 0 20px; /* Añadir un padding para hacer clic en el área */
+  text-decoration: none;
+}
+
+.mobile-menu {
+  display: none; /* Ocultar el botón de menú en pantallas grandes */
+}
+
+.mobile-list {
+  display: none; /* Ocultar la lista de menú en pantallas grandes */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-list li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mobile-list li a {
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 40px;
+    margin: 5px;
+  }
+
+  .menu {
+    display: none; /* Ocultar el menú en pantallas pequeñas */
+  }
+
+  .mobile-menu {
+    display: block; /* Mostrar el botón de menú en pantallas pequeñas */
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="container create-messages">
+  <div class="title-message">
+    <span>{{ title }}</span>
+  </div>
+  <form [formGroup]="formAllMessages">
+    <div class="form-control">
+      <label>What search?</label>
+      <input
+        type="text"
+        formControlName="fullname"
+        placeholder="talk about me"
+      />
+    </div>
+    <div class="form-control">
+      <label>Date select</label>
+      <input type="date" formControlName="created_date" />
+    </div>
+  </form>
+</div>
+<div class="card-container" >
+  <div class="card" *ngFor="let message of messages">
+    <h3 class="title">{{message.title}}</h3>
+    <p class="content">{{message.content}}</p>
+    <div class="meta">
+      <span class="date">{{message.created_date}}</span>
+      <span class="name">{{message.users.fullname}}</span>
+    </div>
+  </div>
+</div>
